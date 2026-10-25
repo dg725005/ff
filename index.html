@@ -62,8 +62,30 @@
       <img src="resources/happy.png" width="943" height="561" loading="lazy" decoding="async"
            alt="Our happy customers: boutique racks of colourful dresses and a wooden shelf of handmade home goods">
     </section>
+
+    <section class="offer" aria-labelledby="offer-title">
+      <h2 class="offer-title" id="offer-title">Upto 65% <span class="offer-off">off</span></h2>
+      <p class="offer-text">Special offer for our customers</p>
+      <a class="btn" href="store.html">Claim Offer Now</a>
+    </section>
+    <section class="sizes" aria-labelledby="sizes-heading">
+      <h2 class="sizes-heading" id="sizes-heading">Select your size to explore</h2>
+      <div class="size-card">
+        <h3 class="size-title" id="size-title">Choose Your Size</h3>
+        <p class="size-hint">Pick one size to continue</p>
+        <div class="size-options" role="radiogroup" aria-labelledby="size-title">
+          <label class="size-opt"><input type="radio" name="size" value="M" checked><span>M</span></label>
+          <label class="size-opt"><input type="radio" name="size" value="L"><span>L</span></label>
+          <label class="size-opt"><input type="radio" name="size" value="XL"><span>XL</span></label>
+          <label class="size-opt"><input type="radio" name="size" value="2XL"><span>2XL</span></label>
+        </div>
+        <button class="size-continue" type="button">Continue <span aria-hidden="true">&rarr;</span></button>
+        <p class="size-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
   </main>
 
   <script src="js/header.js" defer></script>
+  <script src="js/size-picker.js" defer></script>
 </body>
 </html>
