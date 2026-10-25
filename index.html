@@ -7,7 +7,7 @@
   <meta name="description" content="Farbika Fashion - premium clothing, made with care. Shop the latest styles and new arrivals.">
   <meta name="theme-color" content="#0f1c3a">
   <link rel="canonical" href="https://www.example.com/">
-  <link rel="icon" href="logo/logo-96.webp" type="image/webp">
+  <link rel="icon" href="logo/canva-logo.png" type="image/png">
   <link rel="preload" href="fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add("js")</script>
@@ -17,17 +17,14 @@
 
   <!-- ===== HEADER: copy this block into every page ===== -->
   <header class="site-header">
+    <div class="scrim" aria-hidden="true"></div>
     <div class="header-bar">
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
 
       <a class="logo" href="index.html" aria-label="Farbika Fashion - home">
-        <img src="logo/logo-96.webp"
-             srcset="logo/logo-96.webp 96w, logo/logo-144.webp 144w, logo/logo-192.webp 192w"
-             sizes="(min-width:1024px) 72px, (min-width:768px) 68px, 48px"
-             width="48" height="48" alt="Farbika Fashion logo" fetchpriority="high">
-        <span class="logo-text" aria-hidden="true">Farbika Fashion</span>
+        <img src="logo/canva-logo.png" width="46" height="46" alt="Farbika Fashion logo" fetchpriority="high">
       </a>
 
       <nav class="nav" id="site-nav" aria-label="Main menu">
@@ -38,14 +35,23 @@
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
+
+      <div class="social">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer me" aria-label="Farbika Fashion on Facebook">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer me" aria-label="Farbika Fashion on Instagram">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+        </a>
+      </div>
     </div>
   </header>
-  <div class="scrim" aria-hidden="true"></div>
   <!-- ===== END HEADER ===== -->
 
   <main id="main" class="demo">
     <h1>Farbika Fashion</h1>
-    <p>Page content comes next. Scroll to check that the header stays at the top.</p>
+    <p>Page content comes next. Scroll down: the header stays on top and the page moves under it.</p>
+    <div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div>
   </main>
 
   <script src="js/header.js" defer></script>
