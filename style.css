@@ -1,0 +1,92 @@
+/* Farbika Fashion - header (mobile first) */
+@font-face{font-family:"Cormorant Garamond";font-weight:600;font-style:normal;font-display:swap;
+  src:url("../fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2")}
+
+:root{
+  --navy:#0f1c3a; --navy-deep:#0a1429; --gold:#c9a24d; --gold-soft:#e3c987; --ivory:#f7f2e6;
+  --header-h:64px;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);color:var(--navy);background:#fff;line-height:1.5}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:100}
+.skip:focus{left:8px}
+
+/* Header bar: menu button | logo | (space for cart later) */
+.site-header{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:2px solid var(--gold);
+  padding-top:env(safe-area-inset-top,0)}
+.header-bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  height:var(--header-h);padding:0 8px;max-width:1200px;margin:0 auto}
+.logo{display:block;line-height:0;border-radius:50%}
+.logo img{width:48px;height:48px;border-radius:50%}
+.menu-btn{justify-self:start;width:48px;height:48px;display:grid;place-content:center;gap:6px;
+  background:none;border:0;cursor:pointer;color:var(--gold)}
+.menu-btn span{display:block;width:24px;height:2px;background:currentColor;transition:transform .25s,opacity .25s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* Menu: slide-in drawer on phones (only when JS is on) */
+.nav ul{list-style:none;margin:0;padding:0}
+.nav a{display:block;text-decoration:none;font-family:var(--serif);font-weight:600;color:var(--ivory)}
+.nav a[aria-current="page"]{color:var(--gold-soft)}
+.js .nav{position:fixed;top:0;left:0;bottom:0;width:min(82vw,320px);background:var(--navy-deep);
+  border-right:2px solid var(--gold);padding:calc(var(--header-h) + 16px) 24px 24px;
+  transform:translateX(-100%);visibility:hidden;transition:transform .28s ease,visibility 0s .28s;z-index:60}
+.js .nav.is-open{transform:none;visibility:visible;transition:transform .28s ease}
+.js .nav a{font-size:1.75rem;padding:14px 0;border-bottom:1px solid rgba(201,162,77,.3)}
+.js .nav a[aria-current="page"]{padding-left:12px;border-left:3px solid var(--gold)}
+.scrim{position:fixed;inset:0;background:rgba(5,10,24,.6);z-index:55;opacity:0;visibility:hidden;
+  transition:opacity .28s,visibility 0s .28s}
+.scrim.is-open{opacity:1;visibility:visible;transition:opacity .28s}
+.menu-btn,.js .nav,.scrim{-webkit-tap-highlight-color:transparent}
+body.menu-open{overflow:hidden}
+/* Menu button sits above the drawer so it can close it */
+.js .menu-btn{position:relative;z-index:70}
+
+/* No JS: show links as a simple row under the logo */
+html:not(.js) .menu-btn{display:none}
+html:not(.js) .header-bar{grid-template-columns:1fr;justify-items:center;height:auto;padding:8px}
+html:not(.js) .nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 20px;padding:4px 0}
+html:not(.js) .nav a{font-size:1.2rem;padding:8px 4px}
+
+/* Brand name next to the logo (shown on desktop only) */
+.logo-text{display:none}
+
+/* Tablet and desktop: brand left, links centred, free space on the right for cart later */
+@media (min-width:768px){
+  :root{--header-h:88px}
+  .header-bar{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);padding:0 24px}
+  .logo{grid-column:1;grid-row:1;justify-self:start;display:flex;align-items:center;gap:14px;
+    line-height:1;text-decoration:none}
+  .logo img{width:68px;height:68px}
+  .nav{grid-column:2;grid-row:1}
+  .menu-btn,.scrim{display:none}
+  .js .nav,html:not(.js) .nav{position:static;transform:none;visibility:visible;width:auto;background:none;
+    border:0;padding:0}
+  .nav ul,html:not(.js) .nav ul{display:flex;gap:40px}
+  .js .nav a,html:not(.js) .nav a{font-size:1.4rem;letter-spacing:.02em;padding:10px 0;border:0;position:relative;
+    transition:color .2s}
+  .js .nav a[aria-current="page"]{padding-left:0;border-left:0}
+  .nav a:hover{color:var(--gold-soft)}
+  .nav a::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:2px;background:var(--gold);
+    transform:scaleX(0);transform-origin:left;transition:transform .25s}
+  .nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1)}
+}
+@media (min-width:1024px){
+  .logo img{width:72px;height:72px}
+  .logo-text{display:block;font-family:var(--serif);font-weight:600;font-size:1.75rem;
+    color:var(--gold-soft);letter-spacing:.03em;white-space:nowrap}
+}
+@media (min-width:1280px){.header-bar{padding:0 32px}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:0s!important}}
+
+/* Temporary page body so you can see the header working */
+.demo{max-width:1200px;margin:0 auto;padding:32px 20px 120vh}
+@media (min-width:768px){.demo{padding-left:24px;padding-right:24px}}
+@media (min-width:1280px){.demo{padding-left:32px;padding-right:32px}}
+.demo h1{font-family:var(--serif);font-size:2rem;margin:0 0 8px}
