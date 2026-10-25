@@ -9,6 +9,7 @@
   <link rel="canonical" href="https://www.example.com/">
   <link rel="icon" href="logo/canva-logo.png" type="image/png">
   <link rel="preload" href="fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/roboto-slab-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -48,10 +49,19 @@
   </header>
   <!-- ===== END HEADER ===== -->
 
-  <main id="main" class="demo">
-    <h1>Farbika Fashion</h1>
-    <p>Page content comes next. Scroll down: the header stays on top and the page moves under it.</p>
-    <div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div>
+  <main id="main">
+    <section class="hero">
+    <h1>
+      <span class="hero-kicker">Boutique collection for all dresses</span>
+      <span class="hero-title">Spend less, Live more</span>
+    </h1>
+    <p class="hero-text">We ensure styles with beautiful fabric and cuts that will leave you feeling flattered and your absolute best.</p>
+    </section>
+
+    <section class="showcase">
+      <img src="resources/happy.png" width="943" height="561" loading="lazy" decoding="async"
+           alt="Our happy customers: boutique racks of colourful dresses and a wooden shelf of handmade home goods">
+    </section>
   </main>
 
   <script src="js/header.js" defer></script>
