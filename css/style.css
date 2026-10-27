@@ -15,7 +15,7 @@
 
 :root{
   --navy:#0f1c3a; --navy-deep:#0a1429; --gold:#c9a24d; --gold-soft:#e3c987; --ivory:#f7f2e6;
-  --gap:10px; --bar-h:60px;
+  --gap:10px; --bar-h:100px;
   --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --slab:"Roboto Slab",Georgia,"Times New Roman",serif;
   --jost:"Jost",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -34,13 +34,13 @@ a{color:inherit}
 .site-header{position:fixed;z-index:50;left:0;right:0;margin:0 auto;
   top:calc(env(safe-area-inset-top,0px) + var(--gap));
   width:min(1200px,calc(100% - 2 * var(--gap)));
-  background:var(--navy);border:1px solid rgba(201,162,77,.6);border-radius:20px;
+  background:var(--navy);border:1px solid rgba(201,162,77,.6);border-radius:30px;
   box-shadow:0 12px 28px rgba(10,20,41,.32),0 2px 6px rgba(10,20,41,.22)}
 .header-bar{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;
   height:var(--bar-h);padding:0 6px 0 4px}
 .menu-btn{grid-column:1;grid-row:1}
 /* The logo file has a thin white edge around the circle, so the circle below crops it away */
-.logo{grid-column:2;grid-row:1;display:block;line-height:0;width:46px;height:46px;border-radius:50%;overflow:hidden;background:var(--navy)}
+.logo{grid-column:2;grid-row:1;display:block;line-height:0;width:83px;height:83px;border-radius:50%;overflow:hidden;background:var(--navy)}
 .logo img{width:100%;height:100%;display:block;transform:translate(-.2%,.6%) scale(1.07)}
 .social{grid-column:3;grid-row:1;justify-self:end;display:flex}
 .social a{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--gold);
