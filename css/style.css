@@ -108,10 +108,10 @@ html:not(.js) .hero{padding-top:190px}
 }
 /* Laptop and desktop: bigger logo, so the header and menu grow with it */
 @media (min-width:1024px){
-  :root{--bar-h:112px}
-  .site-header{border-radius:32px}
+  :root{--bar-h:210px}
+  .site-header{border-radius:48px}
   .header-bar{padding:0 28px}
-  .logo{width:92px;height:92px}
+  .logo{width:189px;height:189px}
   .nav ul,html:not(.js) .nav ul{gap:52px}
   .js .nav a,html:not(.js) .nav a{font-size:1.65rem;padding:12px 0}
   .nav a::after{bottom:6px;height:3px}
